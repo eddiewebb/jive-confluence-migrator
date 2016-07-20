@@ -1,0 +1,18 @@
+{
+    "test":{
+        "jive_username":"readaccount",
+        "jive_password":"AES-ENCRYPTEDPASSWORD",
+        "jive_baseUrl":"https://test-jive.example.com",
+        "conf_username":"migrator",
+        "conf_password":"AES-ENCRYPTEDPASSWORD",
+        "conf_baseUrl":"https://test-wiki.example.com"
+    },
+    "prod":{
+        "jive_username":"readaccount",
+        "jive_password":"AES-ENCRYPTEDPASSWORD",
+        "jive_baseUrl":"https://jive.example.com",
+        "conf_username":"migrator",
+        "conf_password":"AES-ENCRYPTEDPASSWORD",
+        "conf_baseUrl":"https://wiki.example.com"
+    }
+}
