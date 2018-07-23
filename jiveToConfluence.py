@@ -33,7 +33,7 @@ def purgeConfluence():
 	sure = raw_input("Do you want to delete all existing Questions, in all spaces, in Confluence first?!  (y/n)")
 	if sure == "y":
 		print "Destroying ALLLLLL questions in confluence"
-		url = profile[conf_baseUrl] + "/rest/questions/1.0/search?limit=500&type=question"
+		url = profile['conf_baseUrl'] + "/rest/questions/1.0/search?limit=500&type=question"
 		r = requests.get(url,verify=False,auth=(profile['conf_username'], profile['conf_password']))
 		print "Result:" + str(r.status_code)
 		questions = json.loads(r.text)
@@ -45,7 +45,7 @@ def purgeConfluence():
 				for thread in threads:
 					if not thread.isAlive():
 						threads.remove(thread)
-			thr = threading.Thread(target=deleteQuestion, args=([profile[conf_baseUrl] + "/rest/questions/1.0/question/" + str(question['id'])]))
+			thr = threading.Thread(target=deleteQuestion, args=([profile['conf_baseUrl'] + "/rest/questions/1.0/question/" + str(question['id'])]))
 			thr.start() # will run "foo"
 			threads.append(thr)
 		for thread in threads:
